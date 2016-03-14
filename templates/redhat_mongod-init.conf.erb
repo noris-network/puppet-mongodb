@@ -17,7 +17,7 @@
 # NOTE: if you change any OPTIONS here, you get what you pay for:
 # this script assumes all options are in the config file.
 CONFIGFILE="/etc/mongod_<%= @mongod_instance %>.conf"
-OPTIONS=" -f $CONFIGFILE"
+OPTIONS=" -f $CONFIGFILE <%= scope.lookupvar('mongodb::daemon_options') %>"
 
 # FIXME: 1.9.x has a --shutdown flag that parses the config file and
 # shuts down the correct running pid, but that's unavailable in 1.8
