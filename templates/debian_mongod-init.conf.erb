@@ -91,7 +91,7 @@ DIETIME=10                   # Time to wait for the server to die, in seconds
 
 DAEMONUSER=<%= scope.lookupvar('mongodb::run_as_user') %>
 DAEMONGROUP=<%= scope.lookupvar('mongodb::run_as_group') %>
-DAEMON_OPTS=${DAEMON_OPTS:-"--config $CONF"}
+DAEMON_OPTS="--config $CONF <%= scope.lookupvar('mongodb::daemon_options') %>"
 
 set -e
 

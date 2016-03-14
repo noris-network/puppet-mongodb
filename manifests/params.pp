@@ -57,4 +57,8 @@ class mongodb::params {
 
     $pidfilepath = $dbdir
 
+    # Additional options, e.g. --nounixsocket
+
+    $daemon_options = ''
+
 }
